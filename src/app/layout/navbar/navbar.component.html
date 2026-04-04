@@ -1,0 +1,79 @@
+<nav class="fixed top-24 sm:top-32 w-full z-30 bg-neutral-primary shadow-lg">
+
+  <div class="flex justify-between items-center px-4 py-3 max-w-screen-2xl mx-auto">
+
+    <!-- Logo -->
+    <p class="text-green-400 font-bold text-xl">
+      <!-- Puedes reemplazar esto con tu logo real -->
+    </p>
+
+    <!-- Botón hamburguesa -->
+    <button 
+      (click)="openNav()" 
+      class="text-xl sm:text-2xl lg:text-3xl relative z-40"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </div>
+
+  <!-- Overlay + Sidebar -->
+  <div 
+    (click)="exitNav()"
+    class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-500"
+    [class.opacity-100]="isSidebarOpen"
+    [class.opacity-0]="!isSidebarOpen"
+    [class.pointer-events-auto]="isSidebarOpen"
+    [class.pointer-events-none]="!isSidebarOpen"
+  >
+
+    <!-- Sidebar -->
+    <div 
+    (click)="$event.stopPropagation()"
+    class="fixed top-0 right-0 h-full w-[75%] sm:w-[50%] bg-gradient-to-tr from-transparent to-blue-200 flex flex-col justify-center items-center font-bold z-50 transform transition-transform duration-500 ease-in-out"
+    [class.translate-x-0]="isSidebarOpen"
+    [class.translate-x-full]="!isSidebarOpen"
+  >
+
+      <!-- Botón cerrar -->
+      <button 
+        (click)="exitNav()"
+        class="absolute top-4 right-4 text-3xl hover:scale-110 transition"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Menú -->
+      <ul class="flex flex-col text-xl sm:text-3xl text-center gap-3">
+
+        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition">
+          <a routerLink="inicio" (click)="exitNav()">Inicio</a>
+        </li>
+
+        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
+          <a routerLink="nosotros" (click)="exitNav()">Nosotros</a>
+        </li>
+
+        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
+          <a routerLink="servicios" (click)="exitNav()">Servicios</a>
+        </li>
+
+        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
+          <a routerLink="planes" (click)="exitNav()">Planes</a>
+        </li>
+
+        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
+          <a routerLink="contacto" (click)="exitNav()">Contacto</a>
+        </li>
+
+        <li class="px-6 py-2 border border-blue-500 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition duration-500">
+          <a routerLink="login" (click)="exitNav()"><i class="fa-solid fa-right-to-bracket mr-2"></i>Login</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
