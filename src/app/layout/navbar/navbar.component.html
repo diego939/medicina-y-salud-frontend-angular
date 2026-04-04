@@ -46,27 +46,11 @@
       <!-- Menú -->
       <ul class="flex flex-col text-xl sm:text-3xl text-center gap-3">
 
-        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition">
-          <a routerLink="inicio" (click)="exitNav()">Inicio</a>
+        <li *ngFor="let ruta of rutas" class="px-6 py-2 sm:border-2 border-1 border-black rounded-full text-black hover:bg-black hover:text-white transition">
+          <a routerLink="{{ruta.link}}" (click)="exitNav()">{{ruta.nombre}}</a>
         </li>
 
-        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
-          <a routerLink="nosotros" (click)="exitNav()">Nosotros</a>
-        </li>
-
-        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
-          <a routerLink="servicios" (click)="exitNav()">Servicios</a>
-        </li>
-
-        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
-          <a routerLink="planes" (click)="exitNav()">Planes</a>
-        </li>
-
-        <li class="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-500">
-          <a routerLink="contacto" (click)="exitNav()">Contacto</a>
-        </li>
-
-        <li class="px-6 py-2 border border-blue-500 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition duration-500">
+        <li class="px-6 py-2 sm:border-2 border-1 border-blue-500 rounded-full text-blue-500 hover:bg-blue-500 hover:text-white transition duration-500">
           <a routerLink="login" (click)="exitNav()"><i class="fa-solid fa-right-to-bracket mr-2"></i>Login</a>
         </li>
 

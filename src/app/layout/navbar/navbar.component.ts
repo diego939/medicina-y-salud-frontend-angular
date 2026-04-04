@@ -15,6 +15,13 @@ export class NavbarComponent {
 
  isSidebarOpen = false;
 
+ rutas = [
+  {link:"inicio",nombre:"Inicio"},
+  {link:"nosotros",nombre:"Nosotros"},
+  {link:"servicios",nombre:"Servicios"},
+  {link:"planes",nombre:"Planes"},
+ ];
+
   openNav() {
     this.isSidebarOpen = true;
   }

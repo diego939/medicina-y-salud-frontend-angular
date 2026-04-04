@@ -17,6 +17,24 @@ export const routes: Routes = [
       import('./features/inicio/pages/inicio/inicio.component')
         .then(m => m.InicioComponent)
   },
+  {
+    path: 'nosotros',
+    loadComponent: () =>
+      import('./features/nosotros/pages/nosotros/nosotros.component')
+        .then(m => m.NosotrosComponent)
+  },
+  {
+    path: 'servicios',
+    loadComponent: () =>
+      import('./features/servicios/pages/servicios/servicios.component')
+        .then(m => m.ServiciosComponent)
+  },
+  {
+    path: 'planes',
+    loadComponent: () =>
+      import('./features/planes/pages/planes/planes.component')
+        .then(m => m.PlanesComponent)
+  },
 
   // ✅ default
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
