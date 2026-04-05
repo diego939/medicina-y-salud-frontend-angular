@@ -42,51 +42,73 @@
              data-aos-delay="300"
              data-aos-anchor-placement="top-bottom">
 
-            <form class="space-y-4">
+            <form #formRef="ngForm" (ngSubmit)="enviarFormulario(formRef)" class="space-y-4">
 
                 <!-- Nombre -->
                 <div>
                     <label class="block text-sm font-semibold mb-1">Nombre</label>
                     <input type="text"
-                           placeholder="Tu nombre"
-                           class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
-                           focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
+                        name="nombre"
+                        ngModel
+                        required
+                        placeholder="Tu nombre"
+                        class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
+                        focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
                 </div>
 
                 <!-- Email -->
                 <div>
                     <label class="block text-sm font-semibold mb-1">Email</label>
                     <input type="email"
-                           placeholder="tu@email.com"
-                           class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
-                           focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
+                        name="email"
+                        ngModel
+                        required
+                        placeholder="tu@email.com"
+                        class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
+                        focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
                 </div>
 
                 <!-- Teléfono -->
                 <div>
                     <label class="block text-sm font-semibold mb-1">Teléfono</label>
                     <input type="tel"
-                           placeholder="Tu teléfono"
-                           class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
-                           focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
+                        name="telefono"
+                        ngModel
+                        required
+                        placeholder="Tu teléfono"
+                        class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
+                        focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition" />
                 </div>
 
                 <!-- Mensaje -->
                 <div>
                     <label class="block text-sm font-semibold mb-1">Mensaje</label>
                     <textarea rows="4"
-                              placeholder="Escribí tu consulta..."
-                              class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
-                              focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition"></textarea>
+                            name="mensaje"
+                            ngModel
+                            required
+                            placeholder="Escribí tu consulta..."
+                            class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2 
+                            focus:outline-none focus:ring-2 focus:ring-[#00cba9] transition"></textarea>
                 </div>
 
                 <!-- Botón -->
                 <button type="submit"
+                        [disabled]="enviando"
                         class="w-full bg-[#00cba9] hover:bg-[#00b89a] 
                         text-white font-semibold py-3 rounded-lg 
                         transition duration-300 shadow-md 
-                        hover:scale-[1.02]">
-                    Enviar consulta
+                        disabled:opacity-60 disabled:cursor-not-allowed 
+                        hover:scale-[1.02] flex items-center justify-center gap-2">
+
+                    <!-- Spinner -->
+                    <span *ngIf="enviando" 
+                        class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin">
+                    </span>
+
+                    <!-- Texto dinámico -->
+                    {{ enviando ? 'Enviando...' : 'Enviar consulta' }}
+
                 </button>
 
             </form>
