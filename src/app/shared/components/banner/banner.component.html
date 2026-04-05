@@ -1,13 +1,17 @@
 <div id="default-carousel" class="relative w-full z-10" data-carousel="slide" data-carousel-interval="5000">
     
     <!-- Carousel wrapper -->
-    <div class="relative overflow-hidden sm:h-[550px] h-72">
+    <div class="relative sm:h-[550px] h-72 overflow-hidden bg-[#00cba9]">
         
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="assets/banner/banner1.png"
-                class="absolute block w-full h-full object-cover top-0 left-0"
-                alt="Imagen 1">
+            
+            <!-- IMG PARALLAX -->
+            <div class="absolute inset-0 overflow-hidden">
+                <img src="assets/banner/banner1.png"
+                     class="w-full h-full object-cover scale-110 will-change-transform"
+                     data-parallax />
+            </div>
 
             <!-- Overlay -->
             <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
@@ -28,11 +32,13 @@
 
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/banner/banner2.jpg"
-                class="absolute block w-full h-full object-cover top-0 left-0"
-                alt="Imagen 2">
+            
+            <div class="absolute inset-0 overflow-hidden">
+                <img src="assets/banner/banner2.jpg"
+                     class="w-full h-full object-cover scale-110 will-change-transform"
+                     data-parallax />
+            </div>
 
-            <!-- Overlay -->
             <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
                         items-center sm:items-start 
                         text-center sm:text-left 
@@ -51,11 +57,13 @@
 
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/banner/banner3.png"
-                class="absolute block w-full h-full object-cover top-0 left-0"
-                alt="Imagen 3">
+            
+            <div class="absolute inset-0 overflow-hidden">
+                <img src="assets/banner/banner3.png"
+                     class="w-full h-full object-cover scale-110 will-change-transform"
+                     data-parallax />
+            </div>
 
-            <!-- Overlay -->
             <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
                         items-center sm:items-start 
                         text-center sm:text-left 
@@ -72,17 +80,17 @@
             </div>
         </div>
 
-        <!-- 🌊 SVG ONDA -->
-        <div class="absolute bottom-0 left-0 w-full z-30 pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#00cba9" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,277.3C960,245,1200,171,1320,133.3L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
-            </svg>
-        </div>
+    </div>
 
+    <!-- 🌊 OLA -->
+    <div class="absolute bottom-0 left-0 w-full z-30 pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#00cba9" fill-opacity="1" d="M0,288L60,256C120,224,240,160,360,160C480,160,600,224,720,218.7C840,213,960,139,1080,112C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
     </div>
 
     <!-- Indicators -->
-    <div class="absolute z-30 flex left-1/2 -translate-x-1/2 bottom-2 sm:bottom-5 space-x-3">
+    <div class="absolute z-40 flex left-1/2 -translate-x-1/2 bottom-2 sm:bottom-5 space-x-3">
         <button type="button" class="w-3 h-3 rounded-full bg-white" data-carousel-slide-to="0"></button>
         <button type="button" class="w-3 h-3 rounded-full bg-white/50" data-carousel-slide-to="1"></button>
         <button type="button" class="w-3 h-3 rounded-full bg-white/50" data-carousel-slide-to="2"></button>
