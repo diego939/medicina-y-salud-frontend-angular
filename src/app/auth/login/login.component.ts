@@ -2,91 +2,45 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/services/auth.service';
 import { MenuService } from '../../core/services/menu.service';
 import { Router } from '@angular/router';
-import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ ReactiveFormsModule, CommonModule ],
+  imports: [ ReactiveFormsModule, CommonModule, FormsModule ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  errorMessage: string = '';
-  loading = false;
+export class LoginComponent {
+enviando: boolean = false;
 
-  form = this.fb.group({
-    email: [''],
-    password: ['']
-  });
+login(form: any) {
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private menuService: MenuService,
-    private router: Router
-  ) {}
-
-
-  ngOnInit() {
-  if (this.authService.isLogged()) {
-
-    const menus = this.menuService.obtenerMenus();
-
-    if (menus.length > 0) {
-      this.router.navigate([menus[0].menuUrl]);
-    }
-
+  if (form.invalid) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Datos incompletos',
+      text: 'Ingresá email y contraseña',
+      confirmButtonColor: '#00cba9'
+    });
+    return;
   }
-}
-  
-  login() {
-  if (this.form.invalid) return;
 
-  this.loading = true;
-  this.errorMessage = '';
+  this.enviando = true;
 
-  this.authService.login(this.form.value).subscribe({
-    next: (user) => {
+  setTimeout(() => {
 
-      this.authService.guardarUsuario(user);
+    this.enviando = false;
 
-      this.menuService.cargarMenus(user.idRol).subscribe({
-        next: (menus) => {
-          this.loading = false;
+    Swal.fire({
+      icon: 'success',
+      title: 'Bienvenido',
+      text: 'Inicio de sesión exitoso',
+      confirmButtonColor: '#00cba9'
+    });
 
-          Swal.fire({
-            toast: true,
-            position: 'top',
-            icon: 'success',
-            title: `¡Bienvenido ${user.nombre}!`,
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true
-          });
-
-          if (menus.length > 0) {
-            const primeraRuta = menus[0].menuUrl;
-            this.router.navigate([primeraRuta]);
-          } else {
-            this.router.navigate(['/login']);
-          }
-        },
-        error: () => {
-          this.loading = false;
-          this.errorMessage = 'Error al cargar menús';
-        }
-      });
-
-    },
-    error: (err) => {
-      this.loading = false;
-
-      // mensaje del backend
-      this.errorMessage = err.error?.message || err.error || 'Error al iniciar sesión';
-    }
-  });
+  }, 1200);
 }
 }
