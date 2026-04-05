@@ -1,0 +1,85 @@
+<section class="relative w-full min-h-[70vh] flex items-center justify-center">
+
+    <!-- Imagen de fondo -->
+    <div class="absolute inset-0 overflow-hidden">
+        <img src="assets/planes/planes.png"
+             class="w-full h-full object-cover scale-110"
+             alt="Planes de salud">
+    </div>
+
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Contenido -->
+    <div class="absolute inset-0 flex flex-col justify-center 
+                items-center sm:items-start 
+                text-center sm:text-left 
+                px-4 sm:px-16 z-20">
+
+        <!-- Título -->
+        <h2 class="text-white text-3xl sm:text-5xl font-bold mb-4"
+            data-aos="fade-left" data-aos-delay="150">
+            Planes diseñados para tu bienestar
+        </h2>
+
+        <!-- Descripción -->
+        <p class="text-white text-sm sm:text-lg max-w-2xl mb-8"
+           data-aos="fade-left" data-aos-delay="300">
+            Elegí la cobertura que mejor se adapte a vos y a tu familia. 
+            Contamos con diferentes niveles de atención, beneficios exclusivos 
+            y el respaldo de un sistema de salud confiable.
+        </p>
+
+        <!-- BADGES DE PLANES -->
+        <div class="flex flex-wrap gap-3 justify-center sm:justify-start"
+             data-aos="fade-up" data-aos-delay="450">
+
+            <!-- Plan Cerca -->
+            <div class="flex items-center gap-2 px-4 py-2 border border-white/40 
+                        rounded-full text-white text-sm 
+                        backdrop-blur-sm bg-white/10 
+                        hover:bg-[#00cba9] hover:border-[#00cba9] 
+                        transition duration-300 cursor-pointer">
+
+                <i class="fa-solid fa-house-medical"></i>
+                <span>Plan Cerca</span>
+            </div>
+
+            <!-- Plan Integral -->
+            <div class="flex items-center gap-2 px-4 py-2 border border-white/40 
+                        rounded-full text-white text-sm 
+                        backdrop-blur-sm bg-white/10 
+                        hover:bg-[#00cba9] hover:border-[#00cba9] 
+                        transition duration-300 cursor-pointer">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Plan Integral</span>
+            </div>
+
+            <!-- Plan Selecta -->
+            <div class="flex items-center gap-2 px-4 py-2 border border-white/40 
+                        rounded-full text-white text-sm 
+                        backdrop-blur-sm bg-white/10 
+                        hover:bg-[#00cba9] hover:border-[#00cba9] 
+                        transition duration-300 cursor-pointer">
+
+                <i class="fa-solid fa-star"></i>
+                <span>Plan Selecta</span>
+            </div>
+
+            <!-- Plan Superior -->
+            <div class="flex items-center gap-2 px-4 py-2 border border-white/40 
+                        rounded-full text-white text-sm 
+                        backdrop-blur-sm bg-white/10 
+                        hover:bg-[#00cba9] hover:border-[#00cba9] 
+                        transition duration-300 cursor-pointer">
+
+                <i class="fa-solid fa-crown"></i>
+                <span>Plan Superior</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
