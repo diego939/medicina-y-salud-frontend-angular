@@ -1,4 +1,4 @@
-<section class="relative w-full min-h-[70vh] sm:min-h-[70vh] flex items-center justify-center">
+<section class="relative w-full min-h-[70vh] flex items-center justify-center">
 
     <!-- Imagen de fondo -->
     <div class="absolute inset-0 overflow-hidden">
@@ -11,22 +11,25 @@
     <div class="absolute inset-0 bg-black/50"></div>
 
     <!-- Contenido -->
-    <div data-aos="fade-up" class="absolute inset-0 bg-black/40 flex flex-col justify-center 
-                        items-center sm:items-start 
-                        text-center sm:text-left 
-                        px-4 sm:px-16 z-20">
+    <div class="absolute inset-0 flex flex-col justify-center 
+                items-center sm:items-start 
+                text-center sm:text-left 
+                px-4 sm:px-16 z-20">
 
-        <h2 class="text-white text-3xl sm:text-5xl font-bold mb-4">
+        <h2 class="text-white text-3xl sm:text-5xl font-bold mb-4"
+            data-aos="fade-left" data-aos-delay="150">
             Elegí el plan ideal para vos
         </h2>
 
-        <p class="text-white text-sm sm:text-lg max-w-2xl mb-6">
+        <p class="text-white text-sm sm:text-lg max-w-2xl mb-6"
+           data-aos="fade-left" data-aos-delay="300">
             Contamos con planes de salud pensados para cada etapa de tu vida, 
             combinando cobertura médica, atención personalizada y beneficios exclusivos.
         </p>
 
-        <!-- Botón con routing (Angular) -->
+        <!-- Botón -->
         <a routerLink="/planes"
+           data-aos="fade-left" data-aos-delay="450"
            class="inline-block bg-[#00cba9] hover:bg-[#00b89a] 
                   text-white font-semibold px-6 py-3 rounded-full 
                   transition duration-300 shadow-lg hover:scale-105">

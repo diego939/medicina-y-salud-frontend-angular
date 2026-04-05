@@ -26,7 +26,17 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    AOS.refresh();
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({
+        once: false,
+        duration: 800,
+        offset: 120
+      });
+
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+    }
   }
 
   title = 'Sistema Escolar';
