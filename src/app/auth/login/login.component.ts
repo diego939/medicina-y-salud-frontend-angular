@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [ ReactiveFormsModule, CommonModule ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   errorMessage: string = '';

@@ -9,3 +9,5 @@
 
 /* Source files */
 @source "../node_modules/flowbite";
+
+@import 'aos/dist/aos.css';

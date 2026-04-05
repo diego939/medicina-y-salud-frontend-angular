@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './planes.component.html',
-  styleUrl: './planes.component.css'
+  styleUrls: ['./planes.component.css']
 })
 export class PlanesComponent {
 

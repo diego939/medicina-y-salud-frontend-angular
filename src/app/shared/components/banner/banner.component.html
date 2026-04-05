@@ -1,0 +1,91 @@
+<div id="default-carousel" class="relative w-full z-10" data-carousel="slide" data-carousel-interval="5000">
+    
+    <!-- Carousel wrapper -->
+    <div class="relative overflow-hidden sm:h-[550px] h-72">
+        
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="assets/banner/banner1.png"
+                class="absolute block w-full h-full object-cover top-0 left-0"
+                alt="Imagen 1">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
+                        items-center sm:items-start 
+                        text-center sm:text-left 
+                        px-4 sm:px-16 z-20">
+        
+                <h2 class="text-white text-2xl sm:text-5xl font-bold mb-3">
+                    Tu bienestar, nuestra prioridad
+                </h2>
+
+                <p class="text-white text-sm sm:text-lg max-w-xl">
+                    Brindamos atención médica integral con profesionales comprometidos con tu salud y calidad de vida.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/banner/banner2.jpg"
+                class="absolute block w-full h-full object-cover top-0 left-0"
+                alt="Imagen 2">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
+                        items-center sm:items-start 
+                        text-center sm:text-left 
+                        px-4 sm:px-16 z-20">
+        
+                <h2 class="text-white text-2xl sm:text-5xl font-bold mb-3">
+                    Cuidamos lo más importante: vos
+                </h2>
+
+                <p class="text-white text-sm sm:text-lg max-w-xl">
+                    Tecnología, experiencia y calidez humana al servicio de cada paciente.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/banner/banner3.png"
+                class="absolute block w-full h-full object-cover top-0 left-0"
+                alt="Imagen 3">
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/40 flex flex-col justify-center 
+                        items-center sm:items-start 
+                        text-center sm:text-left 
+                        px-4 sm:px-16 z-20">
+        
+                <h2 class="text-white text-2xl sm:text-5xl font-bold mb-3">
+                    Salud que inspira confianza
+                </h2>
+
+                <p class="text-white text-sm sm:text-lg max-w-xl">
+                    Acompañándote en cada etapa con atención personalizada y soluciones médicas innovadoras.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- 🌊 SVG ONDA -->
+        <div class="absolute bottom-0 left-0 w-full z-30 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#00cba9" fill-opacity="1" d="M0,288L120,293.3C240,299,480,309,720,277.3C960,245,1200,171,1320,133.3L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+            </svg>
+        </div>
+
+    </div>
+
+    <!-- Indicators -->
+    <div class="absolute z-30 flex left-1/2 -translate-x-1/2 bottom-2 sm:bottom-5 space-x-3">
+        <button type="button" class="w-3 h-3 rounded-full bg-white" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white/50" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full bg-white/50" data-carousel-slide-to="2"></button>
+    </div>
+
+</div>
