@@ -3,10 +3,10 @@
     <!-- Glow decorativo -->
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom,#00cba9,transparent)]"></div>
 
-    <div class="max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
+    <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 relative z-10">
 
         <!-- Marca -->
-        <div data-aos="fade-up">
+        <div class="mb-10 sm:mb-10 lg:mb-0" data-aos="fade-up">
             <h2 class="text-2xl font-bold mb-4 text-[#00cba9]">
                 <img src="assets/icon/icono blanco fondo transparente.png" alt="SaludPlus" class="w-24">
             </h2>
@@ -16,8 +16,8 @@
             </p>
 
             <!-- Redes sociales -->
-            <div class="flex gap-3 font-bold">
-                <span *ngFor="let red of redes">
+            <div class="flex font-bold">
+                <span *ngFor="let red of redes" class="mr-3">
                     <a href="{{red.link}}"
                        class="flex items-center justify-center w-10 h-10 
                        text-white border border-white/30 rounded-full 
@@ -32,22 +32,38 @@
         </div>
 
         <!-- Navegación -->
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-10 sm:mb-10 lg:mb-0" data-aos="fade-up" data-aos-delay="100">
             <h3 class="text-lg font-semibold mb-4">Navegación</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-                <li><a routerLink="/" class="hover:text-[#00cba9] transition">Inicio</a></li>
-                <li><a routerLink="/planes" class="hover:text-[#00cba9] transition">Planes</a></li>
-                <li><a routerLink="/contacto" class="hover:text-[#00cba9] transition">Contacto</a></li>
+            <ul class="text-gray-400 text-sm">
+                <li class="mb-2 cursor-pointer">
+                    <a routerLink="/inicio" class="hover:text-[#00cba9] transition">Inicio</a>
+                </li>
+                <li class="mb-2 cursor-pointer">
+                    <a routerLink="/nosotros" class="hover:text-[#00cba9] transition">Nosotros</a>
+                </li>
+                <li class="mb-2 cursor-pointer">
+                    <a routerLink="/servicios" class="hover:text-[#00cba9] transition">Servicios</a>
+                </li>
+                <li class="mb-2 cursor-pointer">
+                    <a routerLink="/planes" class="hover:text-[#00cba9] transition">Planes</a>
+                </li>
+
             </ul>
         </div>
 
         <!-- Servicios -->
-        <div data-aos="fade-up" data-aos-delay="200">
+        <div class="mb-10 sm:mb-10 lg:mb-0" data-aos="fade-up" data-aos-delay="200">
             <h3 class="text-lg font-semibold mb-4">Servicios</h3>
-            <ul class="space-y-2 text-gray-400 text-sm">
-                <li class="hover:text-[#00cba9] transition cursor-pointer">Consultas médicas</li>
-                <li class="hover:text-[#00cba9] transition cursor-pointer">Diagnóstico</li>
-                <li class="hover:text-[#00cba9] transition cursor-pointer">Atención personalizada</li>
+            <ul class="text-gray-400 text-sm">
+                <li class="mb-2 hover:text-[#00cba9] transition cursor-pointer">
+                    Consultas médicas
+                </li>
+                <li class="mb-2 hover:text-[#00cba9] transition cursor-pointer">
+                    Diagnóstico
+                </li>
+                <li class="hover:text-[#00cba9] transition cursor-pointer">
+                    Atención personalizada
+                </li>
             </ul>
         </div>
 
@@ -55,20 +71,20 @@
         <div data-aos="fade-up" data-aos-delay="300">
             <h3 class="text-lg font-semibold mb-4">Contacto</h3>
 
-            <ul class="space-y-3 text-gray-400 text-sm">
+            <ul class="text-gray-400 text-sm">
 
-                <li class="flex items-center gap-2 hover:text-[#00cba9] transition">
-                    <i class="fa-solid fa-location-dot"></i>
+                <li class="flex items-center mb-3 hover:text-[#00cba9] transition">
+                    <i class="fa-solid fa-location-dot mr-2"></i>
                     Corrientes, Argentina
                 </li>
 
-                <li class="flex items-center gap-2 hover:text-[#00cba9] transition">
-                    <i class="fa-solid fa-phone"></i>
+                <li class="flex items-center mb-3 hover:text-[#00cba9] transition">
+                    <i class="fa-solid fa-phone mr-2"></i>
                     +54 379 000 0000
                 </li>
 
-                <li class="flex items-center gap-2 hover:text-[#00cba9] transition">
-                    <i class="fa-solid fa-envelope"></i>
+                <li class="flex items-center hover:text-[#00cba9] transition">
+                    <i class="fa-solid fa-envelope mr-2"></i>
                     {{email}}
                 </li>
 
