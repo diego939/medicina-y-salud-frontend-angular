@@ -1,0 +1,81 @@
+<section class="py-24 my-20 overflow-hidden relative">
+
+  <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-gray-800">
+    Otros Servicios que Ofrecemos
+  </h2>
+
+  <!-- FILA 1 -->
+  <div class="relative w-full overflow-hidden">
+    
+    <!-- Fade laterales -->
+    <div class="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+    <div class="flex gap-6 w-max animate-scroll-left">
+
+      <ng-container *ngFor="let servicio of servicios">
+        <div class="min-w-[220px] bg-white border border-gray-200 
+                    rounded-xl px-6 py-5 text-center shadow-sm
+                    transition duration-300 
+                    hover:shadow-lg hover:-translate-y-1">
+
+          <p class="text-gray-800 font-semibold text-lg">
+            {{ servicio }}
+          </p>
+        </div>
+      </ng-container>
+
+      <!-- duplicado -->
+      <ng-container *ngFor="let servicio of servicios">
+        <div class="min-w-[220px] bg-white border border-gray-200 
+                    rounded-xl px-6 py-5 text-center shadow-sm
+                    transition duration-300 
+                    hover:shadow-lg hover:-translate-y-1">
+
+          <p class="text-gray-800 font-semibold text-lg">
+            {{ servicio }}
+          </p>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+
+  <!-- FILA 2 -->
+  <div class="relative w-full overflow-hidden mt-12">
+    
+    <!-- Fade laterales -->
+    <div class="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+    <div class="flex gap-6 w-max animate-scroll-right">
+
+      <ng-container *ngFor="let servicio of servicios">
+        <div class="min-w-[220px] bg-white border border-gray-200 
+                    rounded-xl px-6 py-5 text-center shadow-sm
+                    transition duration-300 
+                    hover:shadow-lg hover:-translate-y-1">
+
+          <p class="text-gray-800 font-semibold text-lg">
+            {{ servicio }}
+          </p>
+        </div>
+      </ng-container>
+
+      <!-- duplicado -->
+      <ng-container *ngFor="let servicio of servicios">
+        <div class="min-w-[220px] bg-white border border-gray-200 
+                    rounded-xl px-6 py-5 text-center shadow-sm
+                    transition duration-300 
+                    hover:shadow-lg hover:-translate-y-1">
+
+          <p class="text-gray-800 font-semibold text-lg">
+            {{ servicio }}
+          </p>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+
+</section>
