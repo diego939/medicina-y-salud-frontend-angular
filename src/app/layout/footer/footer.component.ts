@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-email = "contacto@saludplus.com";
+email = "contacto@medicinaysalud.com";
 redes = [
   {link:"#",icono:"fa-brands fa-facebook-f"},
   {link:"#",icono:"fa-brands fa-x-twitter"},
