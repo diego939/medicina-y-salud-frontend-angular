@@ -4,6 +4,7 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app/app.routes'; // 🔥 IMPORTANTE: Asegúrate de importar tus rutas correctamente
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
+import 'flowbite';
 
 export const appConfig: ApplicationConfig = {
   providers: [
