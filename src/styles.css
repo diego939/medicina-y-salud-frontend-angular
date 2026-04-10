@@ -43,6 +43,10 @@
   animation-play-state: paused;
 }
 
+.swiper-slide {
+    height: auto;
+}
+
 @media (max-width: 640px) {
   .animate-scroll-left,
   .animate-scroll-right {
