@@ -1,129 +1,68 @@
-<section class="relative py-20 px-4 sm:px-10 overflow-hidden">
+<section class="relative py-20 px-4 sm:px-10 w-full overflow-x-clip box-border">
 
     <!-- Fondo sutil -->
-    <div class="absolute inset-0 bg-gradient-to-br from-[#00cba9]/10 via-white to-[#00cba9]/5"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[#00cba9]/10 via-white to-[#00cba9]/5 pointer-events-none"></div>
 
     <!-- Título -->
-    <div class="text-center mb-16 relative z-10" data-aos="fade-up">
+    <div class="text-center mb-12 sm:mb-16 relative z-10" data-aos="fade-up">
         <h2 class="text-3xl sm:text-5xl font-bold text-gray-800 mb-4">
             Nuestros Planes
         </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
+        <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
             Elegí la cobertura que mejor se adapta a tu estilo de vida.
         </p>
     </div>
 
-    <!-- GRID -->
-    <div class="max-w-7xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
+    <div class="max-w-7xl mx-auto relative z-10 w-full min-w-0" data-aos="fade-up" data-aos-delay="300">
+        <!-- Flechas sobre el carrusel: no roban ancho al track en mobile -->
+        <div class="relative w-full max-w-full mx-auto min-w-0 planes-carousel-shell">
+            <button type="button"
+                    class="planes-swiper-button-prev absolute left-0 top-[42%] z-20 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#00cba9]/35 bg-white/95 text-[#00cba9] shadow-md backdrop-blur-sm transition hover:bg-[#00cba9] hover:text-white hover:shadow-lg disabled:opacity-30 sm:left-1 lg:left-0"
+                    aria-label="Plan anterior">
+                <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
 
-        <!-- PLAN CERCA -->
-        <div data-aos="fade-up" data-aos-delay="150"
-             class="group backdrop-blur-md bg-white/20 border border-white/30 
-             rounded-2xl shadow-lg p-6 
-             transition duration-300 
-             hover:-translate-y-1 hover:shadow-2xl hover:bg-white/30">
+            <button type="button"
+                    class="planes-swiper-button-next absolute right-0 top-[42%] z-20 -translate-y-1/2 flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#00cba9]/35 bg-white/95 text-[#00cba9] shadow-md backdrop-blur-sm transition hover:bg-[#00cba9] hover:text-white hover:shadow-lg disabled:opacity-30 sm:right-1 lg:right-0"
+                    aria-label="Plan siguiente">
+                <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
 
-            <img src="assets/planes/plancerca.png"
-                 class="w-full h-36 object-contain mb-4 
-                 transition duration-300 group-hover:scale-105"
-                 alt="Plan Cerca">
+            <div #planesSwiper class="swiper planes-swiper w-full max-w-full min-w-0">
+                <div class="swiper-wrapper pb-1">
+                    @for (plan of planes; track plan.title) {
+                        <div class="swiper-slide">
+                            <article
+                                class="plan-card group h-full backdrop-blur-md bg-white/25 border border-white/40 rounded-2xl shadow-lg p-5 sm:p-6 transition duration-300 hover:border-[#00cba9]/40 hover:shadow-2xl hover:bg-white/40">
+                                <img [src]="plan.imageSrc"
+                                     [alt]="plan.imageAlt"
+                                     class="w-full h-32 sm:h-36 object-contain mb-4 transition duration-300 group-hover:scale-105"
+                                     loading="lazy"
+                                     decoding="async">
 
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-                Plan Cerca
-            </h3>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-1">
+                                    {{ plan.title }}
+                                </h3>
 
-            <p class="text-sm text-[#00cba9] font-semibold mb-3">
-                Salud simple, rápida y siempre a tu alcance
-            </p>
+                                <p class="text-sm text-[#00cba9] font-semibold mb-3">
+                                    {{ plan.tagline }}
+                                </p>
 
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Una opción ágil y digital que te permite resolver todo desde tu celular, 
-                con acceso a prestadores cercanos y herramientas inteligentes.
-            </p>
-
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    {{ plan.description }}
+                                </p>
+                            </article>
+                        </div>
+                    }
+                </div>
+                <!-- Paginación dentro de .swiper: bullets alineados y sin recortes -->
+                <div class="planes-swiper-pagination"></div>
+            </div>
         </div>
-
-        <!-- PLAN INTEGRAL -->
-        <div data-aos="fade-up" data-aos-delay="300"
-             class="group backdrop-blur-md bg-white/20 border border-white/30 
-             rounded-2xl shadow-lg p-6 
-             transition duration-300 
-             hover:-translate-y-1 hover:shadow-2xl hover:bg-white/30">
-
-            <img src="assets/planes/planintegral.png"
-                 class="w-full h-36 object-contain mb-4 
-                 transition duration-300 group-hover:scale-105"
-                 alt="Plan Integral">
-
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-                Plan Integral
-            </h3>
-
-            <p class="text-sm text-[#00cba9] font-semibold mb-3">
-                Cobertura completa que se adapta a tu día a día
-            </p>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Amplia red nacional con sistema flexible de copagos 
-                para equilibrar costos sin perder calidad de atención.
-            </p>
-
-        </div>
-
-        <!-- PLAN SUPERIOR -->
-        <div data-aos="fade-up" data-aos-delay="450"
-             class="group backdrop-blur-md bg-white/20 border border-white/30 
-             rounded-2xl shadow-lg p-6 
-             transition duration-300 
-             hover:-translate-y-1 hover:shadow-2xl hover:bg-white/30">
-
-            <img src="assets/planes/plansuperior.png"
-                 class="w-full h-36 object-contain mb-4 
-                 transition duration-300 group-hover:scale-105"
-                 alt="Plan Superior">
-
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-                Plan Superior
-            </h3>
-
-            <p class="text-sm text-[#00cba9] font-semibold mb-3">
-                Más confort, más beneficios, más tranquilidad
-            </p>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Internación individual, descuentos en farmacias y 
-                servicios exclusivos como emergencias y consultas a domicilio.
-            </p>
-
-        </div>
-
-        <!-- PLAN SELECTA -->
-        <div data-aos="fade-up" data-aos-delay="600"
-             class="group backdrop-blur-md bg-white/20 border border-white/30 
-             rounded-2xl shadow-lg p-6 
-             transition duration-300 
-             hover:-translate-y-1 hover:shadow-2xl hover:bg-white/30">
-
-            <img src="assets/planes/planselecta.png"
-                 class="w-full h-36 object-contain mb-4 
-                 transition duration-300 group-hover:scale-105"
-                 alt="Plan Selecta">
-
-            <h3 class="text-xl font-bold text-gray-800 mb-1">
-                Plan Selecta
-            </h3>
-
-            <p class="text-sm text-[#00cba9] font-semibold mb-3">
-                La máxima experiencia en salud, sin concesiones
-            </p>
-
-            <p class="text-sm text-gray-600 leading-relaxed">
-                Accedé a centros de primer nivel, internación en suite 
-                y atención personalizada con el más alto estándar.
-            </p>
-
-        </div>
-
     </div>
 
 </section>

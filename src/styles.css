@@ -12,6 +12,11 @@
 
 @import 'aos/dist/aos.css';
 
+@import 'swiper/css';
+@import 'swiper/css/effect-coverflow';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
