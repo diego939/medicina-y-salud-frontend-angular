@@ -39,8 +39,7 @@
 /* Móvil: slide más estrecho que el track → se asoman prev/next (estilo carousel moderno) */
 @media (max-width: 639.98px) {
   .planes-swiper .swiper-slide {
-    width: 78%;
-    max-width: 16.75rem;
+    width: 98%;
   }
 }
 
