@@ -31,40 +31,48 @@ export class CardsPlanesComponent implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private readonly platformId: object) {}
 
-  readonly planes: PlanCard[] = [
-    {
-      title: 'Plan Cerca',
-      tagline: 'Salud simple, rápida y siempre a tu alcance',
-      description:
-        'Una opción ágil y digital que te permite resolver todo desde tu celular, con acceso a prestadores cercanos y herramientas inteligentes.',
-      imageSrc: 'assets/planes/plancerca.png',
-      imageAlt: 'Plan Cerca'
-    },
-    {
-      title: 'Plan Integral',
-      tagline: 'Cobertura completa que se adapta a tu día a día',
-      description:
-        'Amplia red nacional con sistema flexible de copagos para equilibrar costos sin perder calidad de atención.',
-      imageSrc: 'assets/planes/planintegral.png',
-      imageAlt: 'Plan Integral'
-    },
-    {
-      title: 'Plan Superior',
-      tagline: 'Más confort, más beneficios, más tranquilidad',
-      description:
-        'Internación individual, descuentos en farmacias y servicios exclusivos como emergencias y consultas a domicilio.',
-      imageSrc: 'assets/planes/plansuperior.png',
-      imageAlt: 'Plan Superior'
-    },
-    {
-      title: 'Plan Selecta',
-      tagline: 'La máxima experiencia en salud, sin concesiones',
-      description:
-        'Accedé a centros de primer nivel, internación en suite y atención personalizada con el más alto estándar.',
-      imageSrc: 'assets/planes/planselecta.png',
-      imageAlt: 'Plan Selecta'
-    },
-  ];
+readonly planes: PlanCard[] = [
+  {
+    title: 'Plan Cerca',
+    tagline: 'Salud simple, rápida y siempre a tu alcance',
+    description:
+      'Una opción ágil y digital que te permite resolver todo desde tu celular, con acceso a prestadores cercanos y herramientas inteligentes.',
+    imageSrc: 'assets/planes/plancerca.png',
+    imageAlt: 'Plan Cerca'
+  },
+  {
+    title: 'Plan Integral',
+    tagline: 'Cobertura completa que se adapta a tu día a día',
+    description:
+      'Amplia red nacional con sistema flexible de copagos para equilibrar costos sin perder calidad de atención.',
+    imageSrc: 'assets/planes/planintegral.png',
+    imageAlt: 'Plan Integral'
+  },
+  {
+    title: 'Plan Superior',
+    tagline: 'Más confort, más beneficios, más tranquilidad',
+    description:
+      'Internación individual, descuentos en farmacias y servicios exclusivos como emergencias y consultas a domicilio.',
+    imageSrc: 'assets/planes/plansuperior.png',
+    imageAlt: 'Plan Superior'
+  },
+  {
+    title: 'Plan Selecta',
+    tagline: 'La máxima experiencia en salud, sin concesiones',
+    description:
+      'Accedé a centros de primer nivel, internación en suite y atención personalizada con el más alto estándar.',
+    imageSrc: 'assets/planes/planselecta.png',
+    imageAlt: 'Plan Selecta'
+  },
+  {
+    title: 'Plan Gold',
+    tagline: 'Equilibrio perfecto entre cobertura premium y valor',
+    description:
+      'Disfrutá de una cobertura superior con acceso preferencial a especialistas, internación de alta calidad y beneficios exclusivos que optimizan tu experiencia en salud.',
+    imageSrc: 'assets/planes/plangold.png',
+    imageAlt: 'Plan Gold'
+  }
+];
 
   private swiper?: Swiper;
 
@@ -96,8 +104,8 @@ export class CardsPlanesComponent implements AfterViewInit, OnDestroy {
       grabCursor: true,
       centeredSlides: true,
       rewind: true,
-      /** Segunda card (índice 1) centrada al cargar */
-      initialSlide: 1,
+      /** Tercera card (índice 2) centrada al cargar */
+      initialSlide: 2,
       speed: 550,
       slidesPerView: 'auto',
       spaceBetween: 12,
