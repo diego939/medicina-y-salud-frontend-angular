@@ -1,14 +1,20 @@
-<section class="relative w-full min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden mb-24">
+<section class="relative w-full min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden mb-24 bg-transparent">
 
-    <!-- Imagen de fondo -->
+    <!-- Solo imagen (parallax); borde extra para que el movimiento no deje ver el fondo -->
     <div class="absolute inset-0 overflow-hidden">
-        <img src="assets/planes/planes2.png"
-             class="w-full h-full object-cover scale-100 sm:scale-110"
-             alt="Planes de salud">
+        <div #parallaxLayer
+             class="absolute -inset-[18%] will-change-transform">
+            <div class="relative size-full min-h-full">
+                <img src="assets/planes/planes2.png"
+                     class="block size-full object-cover object-center select-none pointer-events-none"
+                     alt="Planes de salud"
+                     draggable="false">
+                <div class="absolute inset-0 z-[1] pointer-events-none
+                            bg-[linear-gradient(90deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.55)_22%,rgba(0,0,0,0.28)_48%,rgba(0,0,0,0.08)_72%,transparent_100%)]"
+                     aria-hidden="true"></div>
+            </div>
+        </div>
     </div>
-
-    <!-- Overlay oscuro -->
-    <div class="absolute inset-0 bg-black/50"></div>
 
     <!-- Contenido -->
     <div class="absolute inset-0 flex flex-col justify-center
