@@ -1,0 +1,9 @@
+/* Misma apariencia que hover (bg negro, texto blanco) cuando la ruta está activa */
+li.active {
+  background-color: #000;
+  color: #fff;
+}
+
+li.active a {
+  color: inherit;
+}

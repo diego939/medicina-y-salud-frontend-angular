@@ -8,8 +8,8 @@
     </p>
 
     <!-- Botón hamburguesa -->
-    <button 
-      (click)="openNav()" 
+    <button
+      (click)="openNav()"
       class="text-xl sm:text-2xl lg:text-3xl relative z-40"
     >
       <i class="fa-solid fa-bars"></i>
@@ -28,18 +28,18 @@
   >
 
     <!-- Sidebar -->
-    <div 
-      class="fixed top-0 right-0 h-full w-[75%] sm:w-[50%] 
-            bg-gradient-to-tr from-transparent to-blue-200 
-            flex flex-col justify-center items-center font-bold z-50 
+    <div
+      class="fixed top-0 right-0 h-full w-[75%] sm:w-[50%]
+            bg-gradient-to-tr from-transparent to-blue-200
+            flex flex-col justify-center items-center font-bold z-50
             transform transition-transform duration-500 ease-in-out
-            translate-x-full"  
+            translate-x-full"
       [class.translate-x-0]="isSidebarOpen"
       [class.translate-x-full]="!isSidebarOpen"
     >
 
       <!-- Botón cerrar -->
-      <button 
+      <button
         (click)="exitNav()"
         class="absolute top-4 right-4 text-3xl hover:scale-110 transition"
       >
@@ -49,7 +49,7 @@
       <!-- Menú -->
       <ul class="flex flex-col text-xl sm:text-3xl text-center gap-3">
         <span *ngFor="let ruta of rutas">
-          <li routerLink="{{ruta.link}}" (click)="exitNav()" class="cursor-pointer px-6 py-2 sm:border-2 border-1 border-black rounded-full text-black hover:bg-black hover:text-white transition">
+          <li routerLink="{{ruta.link}}" routerLinkActive="active" (click)="exitNav()" class="cursor-pointer px-6 py-2 sm:border-2 border-1 border-black rounded-full text-black hover:bg-black hover:text-white transition">
             <a>{{ruta.nombre}}</a>
           </li>
         </span>
