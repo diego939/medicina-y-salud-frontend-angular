@@ -7,7 +7,9 @@
 /* Flowbite plugin */
 @plugin "flowbite/plugin";
 
-/* Source files */
+/* Tailwind v4: escanear plantillas de la app (además de Flowbite) para que el CSS de utilidades exista en producción */
+@source "./**/*.{html,ts}";
+
 @source "../node_modules/flowbite";
 
 @import 'aos/dist/aos.css';
