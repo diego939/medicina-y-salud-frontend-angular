@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  anioActual = new Date().getFullYear();
+
 email = "contacto@medicinaysalud.com";
 redes = [
   {link:"#",icono:"fa-brands fa-facebook-f"},

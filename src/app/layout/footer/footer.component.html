@@ -1,4 +1,4 @@
-<footer class="bg-black text-white pt-16 pb-8 px-4 sm:px-10 relative overflow-hidden">
+<footer class="bg-black text-white pt-32 sm:pt-40 lg:pt-44 pb-8 px-4 sm:px-10 relative z-10 overflow-hidden rounded-t-3xl">
 
     <!-- Glow decorativo -->
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_bottom,#00cba9,transparent)]"></div>
@@ -19,8 +19,8 @@
             <div class="flex font-bold">
                 <span *ngFor="let red of redes" class="mr-3">
                     <a href="{{red.link}}"
-                       class="flex items-center justify-center w-10 h-10 
-                       text-white border border-white/30 rounded-full 
+                       class="flex items-center justify-center w-10 h-10
+                       text-white border border-white/30 rounded-full
                        bg-white/5 backdrop-blur-md
                        hover:bg-[#00cba9] hover:text-black hover:border-[#00cba9]
                        hover:shadow-[0_0_15px_#00cba9]
@@ -94,8 +94,8 @@
     </div>
 
     <!-- Divider -->
-    <div class="border-t border-white/10 mt-12 pt-6 text-center text-gray-500 text-sm relative z-10">
-        © 2026 Medicina y Salud. Todos los derechos reservados.
+    <div class="border-t-4 border-white/10 mt-12 pt-6 text-center text-gray-500 text-sm relative z-10 font-bold">
+        © {{ anioActual }} Medicina y Salud. Todos los derechos reservados.
     </div>
 
 </footer>
