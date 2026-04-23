@@ -1,127 +1,136 @@
 <section class="py-24 my-20 overflow-hidden relative">
-
   <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-16 text-gray-800" data-aos="fade-up">
     Otros Servicios que Ofrecemos
   </h2>
 
   <!-- FILA 1 -->
   <div class="relative w-full overflow-hidden" data-aos="fade-up" data-aos-delay="150">
-    
     <!-- Fade laterales -->
     <div class="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
 
     <div class="flex w-max animate-scroll-left">
-
       <ng-container *ngFor="let servicio of servicios">
-        <div class="min-w-[220px] bg-white border border-gray-200 
-                    rounded-xl px-6 py-6 text-center shadow-sm
-                    transition duration-300 
-                    hover:shadow-lg hover:-translate-y-1 mr-6">
-
+        <div class="min-w-[220px] bg-white border border-gray-200 rounded-xl px-6 py-6 text-center shadow-sm transition duration-300 hover:shadow-lg hover:-translate-y-1 mr-6">
           <!-- ICONO -->
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center 
-                      rounded-full border-2 border-gray-300 bg-white">
-
-            <img 
-              [src]="'assets/icon/servicios/' + servicio + '.png'" 
-              [alt]="servicio"
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-gray-300 bg-white">
+            <img
+              [src]="'assets/icon/servicios/' + servicio.nombre + '.png'"
+              [alt]="servicio.nombre"
               class="w-8 h-8 object-contain" />
-
           </div>
 
           <!-- TEXTO -->
           <p class="text-[#00cba9] font-semibold text-lg leading-tight">
-            {{ servicio }}
+            {{ servicio.nombre }}
           </p>
-
         </div>
       </ng-container>
 
       <!-- duplicado -->
       <ng-container *ngFor="let servicio of servicios">
-        <div class="min-w-[220px] bg-white border border-gray-200 
-                    rounded-xl px-6 py-6 text-center shadow-sm
-                    transition duration-300 
-                    hover:shadow-lg hover:-translate-y-1 mr-6">
-
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center 
-                      rounded-full border-2 border-gray-300 bg-white">
-
-            <img 
-              [src]="'assets/icon/servicios/' + servicio + '.png'" 
-              [alt]="servicio"
+        <div class="min-w-[220px] bg-white border border-gray-200 rounded-xl px-6 py-6 text-center shadow-sm transition duration-300 hover:shadow-lg hover:-translate-y-1 mr-6">
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-gray-300 bg-white">
+            <img
+              [src]="'assets/icon/servicios/' + servicio.nombre + '.png'"
+              [alt]="servicio.nombre"
               class="w-8 h-8 object-contain" />
-
           </div>
 
           <p class="text-[#00cba9] font-semibold text-lg leading-tight">
-            {{ servicio }}
+            {{ servicio.nombre }}
           </p>
-
         </div>
       </ng-container>
-
     </div>
   </div>
 
   <!-- FILA 2 -->
   <div class="relative w-full overflow-hidden mt-12">
-    
     <!-- Fade laterales -->
     <div class="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
 
     <div class="flex w-max animate-scroll-right">
-
       <ng-container *ngFor="let servicio of servicios">
-        <div class="min-w-[220px] bg-white border border-gray-200 
-                    rounded-xl px-6 py-6 text-center shadow-sm
-                    transition duration-300 
-                    hover:shadow-lg hover:-translate-y-1 mr-6">
-
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center 
-                      rounded-full border-2 border-gray-300 bg-white">
-
-            <img 
-              [src]="'assets/icon/servicios/' + servicio + '.png'" 
-              [alt]="servicio"
+        <div class="min-w-[220px] bg-white border border-gray-200 rounded-xl px-6 py-6 text-center shadow-sm transition duration-300 hover:shadow-lg hover:-translate-y-1 mr-6">
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-gray-300 bg-white">
+            <img
+              [src]="'assets/icon/servicios/' + servicio.nombre + '.png'"
+              [alt]="servicio.nombre"
               class="w-8 h-8 object-contain" />
-
           </div>
 
           <p class="text-[#00cba9] font-semibold text-lg leading-tight">
-            {{ servicio }}
+            {{ servicio.nombre }}
           </p>
-
         </div>
       </ng-container>
 
       <!-- duplicado -->
       <ng-container *ngFor="let servicio of servicios">
-        <div class="min-w-[220px] bg-white border border-gray-200 
-                    rounded-xl px-6 py-6 text-center shadow-sm
-                    transition duration-300 
-                    hover:shadow-lg hover:-translate-y-1 mr-6">
-
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center 
-                      rounded-full border-2 border-gray-300 bg-white">
-
-            <img 
-              [src]="'assets/icon/servicios/' + servicio + '.png'" 
-              [alt]="servicio"
+        <div class="min-w-[220px] bg-white border border-gray-200 rounded-xl px-6 py-6 text-center shadow-sm transition duration-300 hover:shadow-lg hover:-translate-y-1 mr-6">
+          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-gray-300 bg-white">
+            <img
+              [src]="'assets/icon/servicios/' + servicio.nombre + '.png'"
+              [alt]="servicio.nombre"
               class="w-8 h-8 object-contain" />
-
           </div>
 
           <p class="text-[#00cba9] font-semibold text-lg leading-tight">
-            {{ servicio }}
+            {{ servicio.nombre }}
           </p>
-
         </div>
       </ng-container>
-
     </div>
   </div>
 
+  <div class="mt-16 max-w-5xl mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="300">
+    <h3 class="text-2xl sm:text-3xl font-extrabold text-center text-gray-800 mb-8">
+      Conoce más sobre cada servicio
+    </h3>
+
+    <div class="space-y-4">
+      <div
+        *ngFor="let servicio of servicios; let i = index"
+        class="bg-white rounded-2xl border-2 border-[#00cba9] shadow-sm hover:shadow-md transition duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="350">
+        <button
+          type="button"
+          (click)="toggleAccordion(i)"
+          class="w-full px-6 py-5 flex items-center justify-between gap-4 text-left">
+          <div class="flex items-center gap-4">
+            <span class="w-10 h-10 rounded-full border border-[#00cba9] flex items-center justify-center bg-white shrink-0">
+              <img
+                class="w-5 h-5 object-contain"
+                [src]="'assets/icon/servicios/' + servicio.nombre + '.png'"
+                alt=""
+                width="20"
+                height="20"
+                loading="lazy" />
+            </span>
+            <span class="text-base sm:text-lg font-semibold text-gray-800">
+              {{ servicio.nombre }}
+            </span>
+          </div>
+
+          <svg
+            class="w-5 h-5 text-[#00cba9] transition-transform duration-300"
+            [class.rotate-180]="accordionAbierto === i"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 0 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <div
+          class="accordion-content"
+          [class.accordion-content-open]="accordionAbierto === i">
+          <p class="px-6 pt-4 pb-6 border-t border-[#00cba9]/30 text-gray-600 leading-relaxed">
+            {{ servicio.descripcion }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
